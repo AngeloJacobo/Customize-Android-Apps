@@ -9,7 +9,7 @@ The first step to customize an Android app is of course to download the `.apk` f
 3. Next, we will need to decompile this `.apk` file (then recompile later after customizing it) to extract the codes. We will use [Easy Apk Tool](https://apk-easy-tool.en.lo4d.com/windows) for that. Download the tool, extract, then run `apkeasytool.exe`.
 
 4. Browse the apk file then click on Decompile button. A new folder will be created under `/1-Decompiled APKs/`.  
-![image](https://user-images.githubusercontent.com/87559347/197327732-8fe164ff-dfc1-4c39-8cc9-f0332ad9fa1b.png)
+![image](https://user-images.githubusercontent.com/87559347/197329777-62e3beb3-badd-445b-969b-895223ae72d8.png)
 
 
 ## Customize App Name
