@@ -1,7 +1,7 @@
 # Customize-Android-Apps
 This contains my notes on how to customize existing Android apps such as changing app name, app icon, hiding app from the app drawer, and others. These steps were done on a Windows PC. 
 
-# Preparation
+## Preparation
 The first step to customize an Android app is of course to download the `.apk` file:
 1. Search your desired app to customize in [Google Play](https://play.google.com/store/apps).
 2. Copy the link of the app from Google Play to this [apk downloader site](https://apps.evozi.com/apk-downloader/). For the purpose of this demonstration, I will customize [AnyDesk Remote Desktop](https://play.google.com/store/apps/details?id=com.anydesk.anydeskandroid). Below shows the downloaded `.apk` file.  
@@ -11,7 +11,7 @@ The first step to customize an Android app is of course to download the `.apk` f
 ![image](https://user-images.githubusercontent.com/87559347/197320237-e0bfc80c-8622-4f7b-bf04-94ac24458b43.png)
 
 
-# Customize App Name
+## Customize App Name
 First thing you might want to do is to change the name that appears on the app drawer and the name on the Settings>Apps>App_Name:
 1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Search the keyword `android:label`. 
 ![image](https://user-images.githubusercontent.com/87559347/197320497-d1426ee5-0ae9-4094-8ab5-046f6025dbb2.png)
@@ -21,7 +21,7 @@ First thing you might want to do is to change the name that appears on the app d
 ![image](https://user-images.githubusercontent.com/87559347/197323456-7a579e1f-c627-4873-8ce3-768de70116e5.png)  
 4. We will now change this string value **for all instances**. First, search for all instance of the name by running `grep -rnw <app_name>` on the top directory of the decompiled folder. The result will include the filename and the linenumber where the app name is hardcoded. On this demonstration, I run `grep -rnw AnyDesk`.  
 ![image](https://user-images.githubusercontent.com/87559347/197323696-bb39102c-951c-44fb-aed3-4ca047482280.png)   
-5. We can manually change the name for all files listed above which is very tedious. We can just use the bash terminal and some commands:
+5. We can manually change the name for all files listed above which is very tedious. Instead, we can just use the bash terminal and some commands:
 ```
 find . -type f -name "*.xml" -exec sed -i'' -e 's/<previous_name>/<customized_name>/g' {} +
 ```
@@ -29,6 +29,10 @@ This will search for all `.xml` files recursively then substitute all instances 
 ```
 find . -type f -name "*.xml" -exec sed -i'' -e 's/AnyDesk/My App/g' {} +
 ```
-This will change the name from `AnyDesk` to `My App`.
+This will change the name from `AnyDesk` to `My App`. For sanity check if the app name is changed, look for the `app_name` under `strings.xml` again. The string value must now match your desired new app name.  
+![image](https://user-images.githubusercontent.com/87559347/197324278-b9da1784-56dc-4a11-aa57-fa69b65d25d9.png)
 
+## Customize App Icon
+After changing the app name, you might also want to customize the app icon:
+1.
 
