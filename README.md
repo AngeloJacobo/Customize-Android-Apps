@@ -17,10 +17,18 @@ First thing you might want to do is to change the name that appears on the app d
 ![image](https://user-images.githubusercontent.com/87559347/197320497-d1426ee5-0ae9-4094-8ab5-046f6025dbb2.png)
 2. The value of the `android:label` pertains to the app name. As seen below, the value is `"@string/app_name"`. This means the value is inside the `string.xml` file and is stored specifically on the `app_name` variable.  
 ![image](https://user-images.githubusercontent.com/87559347/197321872-b199b6ee-14a6-41f5-9680-40b90dd78ec1.png)
-3. The `string.xml` can be located under `res/values/`. Search for the keyword `app_name` then take note of the string value. On this demonstration, the app name is `AnyDesk`
-![image](https://user-images.githubusercontent.com/87559347/197323456-7a579e1f-c627-4873-8ce3-768de70116e5.png)
-4. We will now change this string value **for all instances**. First, search for all instance of the name by running `grep -rnw <app_name>`. The result will include the filename and linenumber within that file where the app name is 
-
-
+3. The `string.xml` can be located under `res/values/`. Search for the keyword `app_name` then take note of the string value. On this demonstration, the app name is `AnyDesk`.
+![image](https://user-images.githubusercontent.com/87559347/197323456-7a579e1f-c627-4873-8ce3-768de70116e5.png)  
+4. We will now change this string value **for all instances**. First, search for all instance of the name by running `grep -rnw <app_name>` on the top directory of the decompiled folder. The result will include the filename and the linenumber where the app name is hardcoded. On this demonstration, I run `grep -rnw AnyDesk`.  
+![image](https://user-images.githubusercontent.com/87559347/197323696-bb39102c-951c-44fb-aed3-4ca047482280.png)   
+5. We can manually change the name for all files listed above which is very tedious. We can just use the bash terminal and some commands:
+```
+find . -type f -name "*.xml" -exec sed -i'' -e 's/<previous_name>/<customized_name>/g' {} +
+```
+This will search for all `.xml` files recursively then substitute all instances of `<previous_name>` to `<customized_name>`. On this demonstration, I run: 
+```
+find . -type f -name "*.xml" -exec sed -i'' -e 's/AnyDesk/My App/g' {} +
+```
+This will change the name from `AnyDesk` to `My App`.
 
 
