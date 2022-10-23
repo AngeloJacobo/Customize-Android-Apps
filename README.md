@@ -1,5 +1,11 @@
-# Customize-Android-Apps
+# Customize Android Apps
 This contains my notes on how to customize existing Android apps such as changing app name, app icon, hiding app from the app drawer, and others. These steps were done on a Windows PC. 
+# Table of Contents 
+- Preparation
+- Customize App Name
+- Customize App Icon
+- Hide App from App Drawer 
+- Exclude App from Recent Screen
 
 ## Preparation
 The first step to customize an Android app is of course to download the `.apk` file:
@@ -68,7 +74,7 @@ There might be situations where you might want your app to not appear on the app
 5. Now that we made it impossible for the app to not appear on the app drawer. How can then we open it? You can use [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) to launch the activity of the app. But a simpler way is to install [Activity Launcher](https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher&gl=US). As shown below `My App` appears on the `Activity Launcher`, just click any activities under it to open the app. Some activities might throw errors but just try each activities until the app is launched.   
 ![image](https://user-images.githubusercontent.com/87559347/197370836-770058e0-2569-4167-8d52-03328c297870.png)
 
-## Exclude the App from Recent Lists
+## Exclude App from Recent Screen
 If you launched an app, the app will appear on the overview screen/recent apps after you close it. Follow the steps below if you do not want your app to appear on this recent app screen:
 1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Notice lines starting with `<activity`. We will add `android:excludeFromRecents="true"` after the every `<activity`. If `android:excludeFromRecents="true"` is already added on the line then there will be no need to add it again.
 ![image](https://user-images.githubusercontent.com/87559347/197371094-bf87bc48-ff5d-4630-ba32-2778c5693af6.png)
