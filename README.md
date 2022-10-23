@@ -1,11 +1,11 @@
 # Customize Android Apps
 This contains my notes on how to customize existing Android apps such as changing app name, app icon, hiding app from the app drawer, and others. These steps were done on a Windows PC. 
 # Table of Contents 
-- Preparation
-- Customize App Name
-- Customize App Icon
-- Hide App from App Drawer 
-- Exclude App from Recent Screen
+- [Preparation](https://github.com/AngeloJacobo/Customize-Android-Apps#preparation)
+- [Customize App Name](https://github.com/AngeloJacobo/Customize-Android-Apps#customize-app-name)
+- [Customize App Icon](https://github.com/AngeloJacobo/Customize-Android-Apps#customize-app-icon)
+- [Hide App from App Drawer](https://github.com/AngeloJacobo/Customize-Android-Apps#hide-app-from-app-drawer)
+- [xclude App from Recent Screen](https://github.com/AngeloJacobo/Customize-Android-Apps#exclude-app-from-recent-screen)
 
 ## Preparation
 The first step to customize an Android app is of course to download the `.apk` file:
