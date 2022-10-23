@@ -20,7 +20,7 @@ The first step to customize an Android app is of course to download the `.apk` f
 
 ## Customize App Name
 First thing you might want to do is to change the name that appears on the app drawer:
-1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Search the keyword `android:label`. 
+1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Search for the keyword `android:label`. 
 2. The value of the `android:label` pertains to the app name. As seen below, the value is `"@string/app_name"`. This means the value is inside the `string.xml` file and is stored specifically on the `app_name` variable.  
 ![image](https://user-images.githubusercontent.com/87559347/197321872-b199b6ee-14a6-41f5-9680-40b90dd78ec1.png)
 3. The `string.xml` can be located under `res/values/`. Search for the keyword `app_name` then take note of the string value. On this demonstration, the app name is `AnyDesk`.
