@@ -13,7 +13,7 @@ The first step to customize an Android app is of course to download the `.apk` f
 
 
 ## Customize App Name
-First thing you might want to do is to change the name that appears on the app drawer and the name on the Settings>Apps>App_Name:
+First thing you might want to do is to change the name that appears on the app drawer:
 1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Search the keyword `android:label`. 
 ![image](https://user-images.githubusercontent.com/87559347/197320497-d1426ee5-0ae9-4094-8ab5-046f6025dbb2.png)
 2. The value of the `android:label` pertains to the app name. As seen below, the value is `"@string/app_name"`. This means the value is inside the `string.xml` file and is stored specifically on the `app_name` variable.  
@@ -56,11 +56,17 @@ After changing the app name, you might also want to customize the app icon:
 ## Hide App from App Drawer
 There might be situations where you might want your app to not appear on the app drawer. You can use app launcher to hide apps (like this [HideU: Calculator Lock](https://play.google.com/store/apps/details?id=com.calculator.hideu&gl=US)) but this will implicitly give someone an idea that you have an app that you don't want others to see. If you want to hide your app without app launchers, follow the steps below:
 1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Search for the keyword `android.intent.category.LAUNCHER`.   
-2. This category means that the app should appear in the launcher (your app drawer) as a top-level application. To hide your app, just comment the line containing the keyword `android.intent.category.LAUNCHER`. A comment starts with **<!--** and ends with **-->**
+2. This category means that the app should appear in the launcher (your app drawer) as a top-level application. To hide your app, just comment the line containing the keyword `android.intent.category.LAUNCHER`. XML comment has the following syntax
+```
+<!--Your comment-->
+```  
+![image](https://user-images.githubusercontent.com/87559347/197370222-ff719c12-d688-40db-9c27-ea5218187fb1.png)
 
-`![image](https://user-images.githubusercontent.com/87559347/197370076-3136c021-cf4d-47a8-a2c0-06a50b828a0c.png)`
-
-
+3. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
+![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
+4. Install the apk to your phone. Done! The app will not appear on your app drawer but you can of course still see it installed in Settings>Apps>App_Name.
+5. Now that we made it impossible for the app to not appear on the app drawer. How can then we open it? You can use [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) to launch the activity of the app. But a simpler way is to install [Activity Launcher](https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher&gl=US). As shown below `My App` appears on the `Activity Launcher`, just click any activities under it to open the app. Some activities might throw errors but just try each acitivities until the app is launched.   
+![image](https://user-images.githubusercontent.com/87559347/197370836-770058e0-2569-4167-8d52-03328c297870.png)
 
 
 
