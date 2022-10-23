@@ -53,6 +53,15 @@ After changing the app name, you might also want to customize the app icon:
 6. Install the apk to your phone. Done! As shown below, the app icon of `MyDesk` is now different.
 ![image](https://user-images.githubusercontent.com/87559347/197369607-504958d3-8714-4cd8-b086-822e50893121.png)
 
+## Hide App from App Drawer
+There might be situations where you might want your app to not appear on the app drawer. You can use app launcher to hide apps (like this [HideU: Calculator Lock](https://play.google.com/store/apps/details?id=com.calculator.hideu&gl=US)) but this will implicitly give someone an idea that you have an app that you don't want others to see. If you want to hide your app without app launchers, follow the steps below:
+1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Search for the keyword `android.intent.category.LAUNCHER`.   
+2. This category means that the app should appear in the launcher (your app drawer) as a top-level application. To hide your app, just comment the line containing the keyword `android.intent.category.LAUNCHER`. A comment starts with **<!--** and ends with **-->**
+
+`![image](https://user-images.githubusercontent.com/87559347/197370076-3136c021-cf4d-47a8-a2c0-06a50b828a0c.png)`
+
+
+
 
 
 
