@@ -36,7 +36,7 @@ This will search for all `.xml` files recursively then replace all instances of 
 find . -type f -name "*.xml" -exec sed -i'' -e 's/AnyDesk/My App/g' {} +
 ```
 This will change the name from `AnyDesk` to `My App`. For sanity check if the app name is changed, look for the `app_name` under `strings.xml` again. The string value must now match your desired new app name.    
-https://user-images.githubusercontent.com/87559347/197324278-b9da1784-56dc-4a11-aa57-fa69b65d25d9.png   
+![image](https://user-images.githubusercontent.com/87559347/197371581-0bda9b5d-ac99-48db-a811-bed16200f035.png)
 
 6. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.    
 ![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png) 
