@@ -22,7 +22,7 @@ First thing you might want to do is to change the name that appears on the app d
 ![image](https://user-images.githubusercontent.com/87559347/197323456-7a579e1f-c627-4873-8ce3-768de70116e5.png)  
 4. We will now change this string value **for all instances**. First, search for all instance of the name by running `grep -rnw <app_name>` on the top directory of the decompiled folder. The result will include the filename and the linenumber where the app name is hardcoded. On this demonstration, I run `grep -rnw AnyDesk`.  
 ![image](https://user-images.githubusercontent.com/87559347/197323696-bb39102c-951c-44fb-aed3-4ca047482280.png)   
-5. We can manually change the name for all files listed above which is very tedious. Instead, we can just use the bash terminal and some commands:
+5. We can manually change the name for each files listed above which is very tedious. Instead, we can just use the bash terminal and some commands:
 ```
 find . -type f -name "*.xml" -exec sed -i'' -e 's/<previous_name>/<customized_name>/g' {} +
 ```
@@ -31,10 +31,12 @@ This will search for all `.xml` files recursively then substitute all instances 
 find . -type f -name "*.xml" -exec sed -i'' -e 's/AnyDesk/My App/g' {} +
 ```
 This will change the name from `AnyDesk` to `My App`. For sanity check if the app name is changed, look for the `app_name` under `strings.xml` again. The string value must now match your desired new app name.  
+
+
+
+5. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
 ![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
 
-
-5. Go back to Easy APK tool then cick on Compile to compile it back to apk file.
 ## Customize App Icon
 After changing the app name, you might also want to customize the app icon:
 1.
