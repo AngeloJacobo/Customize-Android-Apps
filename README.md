@@ -38,7 +38,7 @@ find . -type f -name "*.xml" -exec sed -i'' -e 's/AnyDesk/My App/g' {} +
 This will change the name from `AnyDesk` to `My App`. For sanity check if the app name is changed, look for the `app_name` under `strings.xml` again. The string value must now match your desired new app name.    
 ![image](https://user-images.githubusercontent.com/87559347/197371581-0bda9b5d-ac99-48db-a811-bed16200f035.png)
 
-6. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.    
+6. We can now convert the decompiled codes back to `.apk` file. Go back to `Easy APK tool`, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.    
 ![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png) 
 
 7. Install the `.apk` to your phone. Done! As shown below, the app name is changed from `AnyDesk` to `My App`.  
@@ -53,7 +53,7 @@ After changing the app name, you might also want to customize the app icon:
 ![image](https://user-images.githubusercontent.com/87559347/197368558-f21a66a0-2646-4325-9b5f-406b6df8fd67.png)  
 3. We will now change every icons for all `mipmap` folders. Make sure all icon names will remain, just replace the image. To make it less tedious, you can just replace all icons with the same images.
 ![image](https://user-images.githubusercontent.com/87559347/197369204-6b9d6dc8-3d77-41e9-8bf2-40f5c4b75c99.png)
-5. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
+5. We can now convert the decompiled codes back to `.apk` file. Go back to `Easy APK tool`, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
 ![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
 6. Install the apk to your phone. Done! As shown below, the app icon of `MyDesk` is now different.
 ![image](https://user-images.githubusercontent.com/87559347/197369607-504958d3-8714-4cd8-b086-822e50893121.png)
@@ -67,7 +67,7 @@ There might be situations where you might want your app to not appear on the app
 ```  
 ![image](https://user-images.githubusercontent.com/87559347/197370222-ff719c12-d688-40db-9c27-ea5218187fb1.png)
 
-3. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
+3. We can now convert the decompiled codes back to `.apk` file. Go back to `Easy APK tool`, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
 ![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
 4. Install the apk to your phone. Done! The app will not appear on your app drawer but you can of course still see it installed in Settings>Apps>App_Name.
 5. Now that we made it impossible for the app to not appear on the app drawer. How can then we open it? You can use [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) to launch the activity of the app. But a simpler way is to install [Activity Launcher](https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher&gl=US). As shown below `My App` appears on the `Activity Launcher`, just click any activities under it to open the app. Some activities might throw errors but just try each activities until the app is launched.   
@@ -77,7 +77,7 @@ There might be situations where you might want your app to not appear on the app
 If you launched an app, the app will appear on the overview screen/recent apps after you close it. Follow the steps below if you do not want your app to appear on this recent app screen:
 1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Notice lines starting with `<activity`. We will add `android:excludeFromRecents="true"` after the every `<activity`. If `android:excludeFromRecents="true"` is already added on the line then there will be no need to add it again.
 ![image](https://user-images.githubusercontent.com/87559347/197371094-bf87bc48-ff5d-4630-ba32-2778c5693af6.png)
-2. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
+2. We can now convert the decompiled codes back to `.apk` file. Go back to `Easy APK tool`, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
 ![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
 3. Install the apk to your phone. Done! Every time you close the app, it will now never appear on the recent app screen.
 
