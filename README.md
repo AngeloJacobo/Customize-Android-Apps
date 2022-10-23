@@ -22,7 +22,7 @@ First thing you might want to do is to change the name that appears on the app d
 ![image](https://user-images.githubusercontent.com/87559347/197323456-7a579e1f-c627-4873-8ce3-768de70116e5.png)  
 4. We will now change this string value **for all instances**. First, search for all instance of the name by running `grep -rnw <app_name>` on the top directory of the decompiled folder. The result will include the filename and the linenumber where the app name is hardcoded. On this demonstration, I run `grep -rnw AnyDesk`.  
 ![image](https://user-images.githubusercontent.com/87559347/197323696-bb39102c-951c-44fb-aed3-4ca047482280.png)   
-5. We can manually change the name for each files listed above which is very tedious. Instead, we can just use the bash terminal and some commands:
+5. We can manually change the name for each files listed above which is very tedious. Instead, we can just use the bash terminal and some commands:  
 ```
 find . -type f -name "*.xml" -exec sed -i'' -e 's/<previous_name>/<customized_name>/g' {} +
 ```
@@ -30,14 +30,34 @@ This will search for all `.xml` files recursively then substitute all instances 
 ```
 find . -type f -name "*.xml" -exec sed -i'' -e 's/AnyDesk/My App/g' {} +
 ```
-This will change the name from `AnyDesk` to `My App`. For sanity check if the app name is changed, look for the `app_name` under `strings.xml` again. The string value must now match your desired new app name.  
+This will change the name from `AnyDesk` to `My App`. For sanity check if the app name is changed, look for the `app_name` under `strings.xml` again. The string value must now match your desired new app name.   
+https://user-images.githubusercontent.com/87559347/197324278-b9da1784-56dc-4a11-aa57-fa69b65d25d9.png  
 
+6. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.    
+![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png) 
 
+7. Install the `.apk` to your phone. Done! As shown below, the app name is changed from `AnyDesk` to `My App`.  
+![image](https://user-images.githubusercontent.com/87559347/197369454-04232906-e660-4763-95ad-47d34400379b.png)
 
-5. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
-![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
 
 ## Customize App Icon
 After changing the app name, you might also want to customize the app icon:
-1.
+1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Search the keyword `android:icon`. 
+![image](https://user-images.githubusercontent.com/87559347/197368442-93dcc4c5-025c-4e4e-83e8-3fe73ba5b421.png)  
+2. The value of the `android:icon` pertains to the file location of the app icon. As seen above, the value is `"@mipmap/ic_launcher`. Go to `/res/` directory then notice folders starting with `mipmap`. Each folder contains various icons used by the app. 
+![image](https://user-images.githubusercontent.com/87559347/197368558-f21a66a0-2646-4325-9b5f-406b6df8fd67.png)  
+3. We will now change every icons for all `mipmap` folders. Make sure all icon names will remain, just replace the image. To make it less tedious, you can just replace all icons with the same images.
+![image](https://user-images.githubusercontent.com/87559347/197369204-6b9d6dc8-3d77-41e9-8bf2-40f5c4b75c99.png)
+5. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
+![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
+6. Install the apk to your phone. Done! As shown below, the app icon of `MyDesk` is now different.
+![image](https://user-images.githubusercontent.com/87559347/197369607-504958d3-8714-4cd8-b086-822e50893121.png)
+
+
+
+
+
+
+
+
 
