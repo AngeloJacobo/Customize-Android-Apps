@@ -65,8 +65,16 @@ There might be situations where you might want your app to not appear on the app
 3. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
 ![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
 4. Install the apk to your phone. Done! The app will not appear on your app drawer but you can of course still see it installed in Settings>Apps>App_Name.
-5. Now that we made it impossible for the app to not appear on the app drawer. How can then we open it? You can use [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) to launch the activity of the app. But a simpler way is to install [Activity Launcher](https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher&gl=US). As shown below `My App` appears on the `Activity Launcher`, just click any activities under it to open the app. Some activities might throw errors but just try each acitivities until the app is launched.   
+5. Now that we made it impossible for the app to not appear on the app drawer. How can then we open it? You can use [Android Debug Bridge (ADB)](https://developer.android.com/studio/command-line/adb) to launch the activity of the app. But a simpler way is to install [Activity Launcher](https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher&gl=US). As shown below `My App` appears on the `Activity Launcher`, just click any activities under it to open the app. Some activities might throw errors but just try each activities until the app is launched.   
 ![image](https://user-images.githubusercontent.com/87559347/197370836-770058e0-2569-4167-8d52-03328c297870.png)
+
+## Exclude the App from Recent Lists
+If you launched an app, the app will appear on the overview screen/recent apps after you close it. Follow the steps below if you do not want your app to appear on this recent app screen:
+1. Go inside the decompiled folder and open the manifest file `AndroidManifest.xml`. Notice lines starting with `<activity`. We will add `android:excludeFromRecents="true"` after the every `<activity`. If `android:excludeFromRecents="true"` is already added on the line then there will be no need to add it again.
+![image](https://user-images.githubusercontent.com/87559347/197371094-bf87bc48-ff5d-4630-ba32-2778c5693af6.png)
+2. We can now convert the decompiled codes back to `.apk` file. Go back to Easy APK tool, change the compile name, then cick on Compile to compile it back to apk file. The generated `.apk` file will be created under `/2-Recompiled APKs/`.  
+![image](https://user-images.githubusercontent.com/87559347/197329747-74eacbf7-affe-4353-b419-df8397264f2e.png)
+3. Install the apk to your phone. Done! Every time you close the app, it will now never appear on the recent app screen.
 
 
 
