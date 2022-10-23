@@ -78,6 +78,14 @@ If you launched an app, the app will appear on the overview screen/recent apps a
 
 
 
+# Donate   
+You can support me by donating:  
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=GBJQGJNCJZVRU)
+
+
+# Inquiries  
+Connect with me at my linkedin: https://www.linkedin.com/in/angelo-jacobo/
 
 
 
